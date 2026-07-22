@@ -1,4 +1,3 @@
-```react
 import React, { useState, useEffect, useRef } from 'react';
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from 'firebase/auth';
@@ -10,7 +9,7 @@ import {
   Wind, Stars, Activity, Cpu, Loader2, Download, Eye, EyeOff, Frame, RefreshCw
 } from 'lucide-react';
 
-const firebaseConfig = JSON.parse(__firebase_config);
+const firebaseConfig = JSON.parse(typeof __firebase_config !== 'undefined' ? __firebase_config : '{}');
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -483,5 +482,3 @@ export default function App() {
     </div>
   );
 }
-
-```
